@@ -52,9 +52,20 @@ func screenUnder21(person: Clubgoer) {
 
 func screenVIP(person: Clubgoer) {
 // TODO: Add your if, else-if statement here!
+// Add an if, else if statement to the the screenVIP(person: Clubgoer) function such that if a clubgoer is over 21 years of age and is on the guest list, admit(person: Clubgoer) is called. If a clubgoer is not over 21 or is not on the guest list, deny(person: Clubgoer) is called, unless the person knows the owner. If the person knows the owner, he or she needs to be taken to see the owner, and sendToOwner(person: Clubgoer) should be called.
+    if person.age > 21 && person.onGuestList {
+        admit(person)
+    } else if person.knowsTheOwner {
+        sendToOwner(person)
+    } else {
+        deny(person)
+    }
+    
 }
 
 screenVIP(ayush)
+screenVIP(chris)
+screenVIP(jarrod)
 
 
 
