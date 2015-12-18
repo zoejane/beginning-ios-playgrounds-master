@@ -24,19 +24,21 @@ func release(game: Game) {
 
 func checkGameForRelease(game: Game) {
 // TODO: Add your if statements here!
+    
+    if game.bugs < 10 && game.hasMusic && game.levels > 5 {
+        release(game)
+    }
     if game.bugs > 10 {
-    print("to many bugs")
+        print("Uh oh, need to fix those bugs.")
     }
-    else if game.hasMusic == false {
-    print("no music")
+    if !game.hasMusic {
+        print("Gotta have tunes!")
     }
-    else if game.levels < 5 {
-    print("to little levels")
+    if game.levels < 5 {
+        print("Need more levels!")
     }
-    else{
-    print("pass")
-    release(game)}
 }
+
 
 checkGameForRelease(ponyQuest)
 checkGameForRelease(sixDegreesOfKevinBacon)
